@@ -42,6 +42,48 @@ ai_suite/
   - Google Gemini API
   - Ollama (local installation)
 
+## 📥 Ollama Setup
+
+1. Install Ollama:
+   
+   **For macOS:**
+   ```bash
+   curl https://ollama.ai/install.sh | sh
+   ```
+
+   **For Linux:**
+   ```bash
+   curl https://ollama.ai/install.sh | sh
+   ```
+
+   **For Windows:**
+   - Download the installer from [Ollama Releases](https://github.com/ollama/ollama/releases)
+   - Or use Windows Subsystem for Linux (WSL)
+
+2. Start Ollama Service:
+   ```bash
+   ollama serve
+   ```
+
+3. Pull and Run Models:
+   ```bash
+   # Pull Llama models
+   ollama pull llama2
+   ollama pull llama2:3.2
+   ollama pull llama2:3.3
+
+   # Pull Mistral
+   ollama pull mistral
+
+   # Test a model
+   ollama run llama2 "Tell me a joke"
+   ```
+
+4. Verify Installation:
+   ```bash
+   ollama --version
+   ```
+
 ## 📥 Installation
 
 1. Clone the repository:

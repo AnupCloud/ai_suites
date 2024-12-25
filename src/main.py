@@ -11,26 +11,18 @@ load_dotenv(dotenv_path=CREDENTIALS)
 client = ai.Client()
 
 
-def fetch_aisuite_responses(models: List[str]) -> List[Tuple[str, str]]:
+def fetch_aisuite_responses(models: List[str], prompt: str) -> List[Tuple[str, str]]:
     """
     Fetch responses from AISuite models.
 
     :param models: A list of model identifiers (strings).
-    :type models: List[str]
+    :param prompt: The user's prompt/question.
     :return: A list of tuples where each tuple contains the model name and its response.
-    :rtype: List[Tuple[str, str]]
-
-    Example return:
-    [
-        ("openai:o1", "Here is the response from openai:o1..."),
-        ("anthropic:claude-3-5-haiku-latest", "Here is the response from Claude..."),
-        ...
-    ]
     """
     # Prepare the conversation messages
     messages = [
         {"role": "system", "content": "You are a helpful AI assistant"},
-        {"role": "user", "content": "tell me a joke on christmas"}
+        {"role": "user", "content": prompt}
     ]
 
     results = []
@@ -46,7 +38,6 @@ def fetch_aisuite_responses(models: List[str]) -> List[Tuple[str, str]]:
 
     return results
 
-
 def main() -> None:
     """
     Main function to demonstrate fetching and printing AISuite responses.
@@ -57,9 +48,9 @@ def main() -> None:
         "google:gemini-2.0-flash-exp",
         "ollama:llama3.2"
     ]
-
+    prompt = "tell me a story on new year"
     # Fetch responses for each model
-    responses = fetch_aisuite_responses(ai_models)
+    responses = fetch_aisuite_responses(ai_models, prompt)
 
     # Print the results in a readable format
     for model_name, model_output in responses:
@@ -71,3 +62,4 @@ def main() -> None:
 
 if __name__ == "__main__":
     main()
+
