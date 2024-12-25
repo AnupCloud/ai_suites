@@ -2,6 +2,9 @@
 
 A Python-based project that demonstrates integration with multiple AI models through a unified interface using the AI Suite library.
 
+## 🔍 Official Github Page ai-suites[Andrewy NG]
+https://github.com/andrewyng/aisuite
+
 ## 📋 Table of Contents
 - [Overview](#overview)
 - [Project Structure](#project-structure)
@@ -20,14 +23,11 @@ This project provides a unified interface to interact with various AI models inc
 
 ```
 ai_suite/
-├── .idea/
 ├── src/
-│   ├── __pycache__/
 │   ├── config.py          # Configuration settings
 │   └── main.py           # Main application logic
-├── .env                  # Environment variables
 ├── .gitignore           # Git ignore rules
-├── credentials.env       # API credentials
+├── .env                 # API credentials
 ├── requirements.txt      # Project dependencies
 └── README.md            # Project documentation
 ```
@@ -35,7 +35,7 @@ ai_suite/
 ## 🛠️ Prerequisites
 
 - Python 3.12.8 or higher
-- AI Suite library (`pip install aisuite`)
+- AI Suite library (`pip install aisuite[all]`)
 - Valid API keys for:
   - OpenAI API
   - Anthropic Claude API
@@ -46,8 +46,8 @@ ai_suite/
 
 1. Clone the repository:
    ```bash
-   git clone https://github.com/yourusername/ai-suite-integration.git
-   cd ai-suite-integration
+   git clone https://github.com/AnupCloud/ai_suites.git
+   cd ai_suites
    ```
 
 2. Create a virtual environment:
@@ -99,18 +99,21 @@ python src/main.py
 1. **OpenAI Models**
    - GPT-4
    - GPT-3.5-turbo
+   - GPT-4o
+   - GPT-O1
 
 2. **Anthropic Models**
    - Claude 3 Opus
-   - Claude 3 Sonnet
-   - Claude 3 Haiku
+   - Claude 3.5 Sonnet
+   - Claude 3.5 Haiku
 
 3. **Google Models**
    - Gemini Pro
    - Gemini Pro Vision
+   - Gemini Flash 2.0
 
 4. **Ollama Models**
-   - Llama 2
+   - Llama 2, 3.2, 3.3
    - Mistral
    - Custom models
 
@@ -120,21 +123,9 @@ python src/main.py
 - Use environment variables for sensitive information
 - Follow security best practices when handling API keys
 
-## 🤝 Contributing
-
-1. Fork the repository
-2. Create a feature branch
-3. Commit your changes
-4. Push to the branch
-5. Create a Pull Request
-
 ## 📝 License
 
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
-
-## 📧 Contact
-
-For questions or support, please open an issue in the GitHub repository.
 
 ## 🙏 Acknowledgments
 

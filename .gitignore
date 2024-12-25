@@ -1,0 +1,4 @@
+.idea/
+.DS_store
+.credentials.env
+__pycache__/
