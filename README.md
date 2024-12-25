@@ -7,13 +7,31 @@ https://github.com/andrewyng/aisuite
 
 ## 📋 Table of Contents
 - [Overview](#overview)
+- [Official Github Page](#official-github-page)
 - [Project Structure](#project-structure)
 - [Prerequisites](#prerequisites)
+- [Ollama Setup](#ollama-setup)
+  - [Installation](#ollama-installation)
+  - [Model Setup](#model-setup)
 - [Installation](#installation)
 - [Configuration](#configuration)
 - [Usage](#usage)
+  - [Command Line Usage](#command-line-usage)
+  - [Streamlit App Usage](#streamlit-app-usage)
+    - [Prerequisites](#prerequisites-1)
+    - [Running the App](#running-the-app)
+    - [App Features & Options](#app-features--options)
+    - [Using the Interface](#using-the-interface)
+    - [Performance Tips](#performance-tips)
 - [Features](#features)
 - [API Models Supported](#api-models-supported)
+  - [OpenAI Models](#openai-models)
+  - [Anthropic Models](#anthropic-models)
+  - [Google Models](#google-models)
+  - [Ollama Models](#ollama-models)
+- [Security](#security)
+- [License](#license)
+- [Acknowledgments](#acknowledgments)
 
 ## 🔍 Overview
 
@@ -116,60 +134,150 @@ ai_suite/
 
 ## 🚀 Usage
 
-The project provides a simple interface to interact with multiple AI models:
-
-1. Import the required modules
-2. Initialize the AI Suite client
-3. Send prompts to multiple models
-4. Receive and process responses
-
+### Command Line Usage
 Run the example:
 ```bash
 python src/main.py
 ```
 
-Output Format:
-   ```env
-   Model: openai:o1
+Example Output:
+```
+Model: openai:o1
 Output:
-Here's one:
+As the old year fades away,
+Like snowflakes in the night,
+A fresh beginning makes its way,
+Bringing hope so bright.
 
-Why does Santa have three gardens?
-
-So he can “ho-ho-ho”!
-
-Merry Christmas!
+Time turns another page anew,
+Dreams and wishes take their flight,
+The future beckons, clean and true,
+In the New Year's gentle light.
 ----------------------------------------
 Model: anthropic:claude-3-5-haiku-latest
 Output:
-Here's a festive Christmas joke for you:
+Here's a poem for the New Year:
 
-Why did Santa's helper see the doctor?
+When midnight strikes and fireworks soar,
+We bid farewell to days of yore.
+Fresh hopes and dreams begin to spring,
+As New Year bells start to ring.
 
-Because he had low "elf" esteem! 🎄😄
-
-Would you like to hear another Christmas joke?
+Each moment holds a promise new,
+Of chances fresh and skies of blue.
+The past year's lessons light our way,
+As we embrace this brand new day.
 ----------------------------------------
 Model: google:gemini-2.0-flash-exp
 Output:
-Okay, here's a Christmas joke for you:
+Here's a New Year poem for you:
 
-Why did Santa get a parking ticket on Christmas Eve?
+Time's wheel turns once more,
+As we stand at tomorrow's door.
+Memories of the year past fade,
+While new dreams are carefully made.
 
-... Because he parked in a snow parking zone!
-
+Midnight chimes with promise sweet,
+As old and new gently meet.
+Hope rises like the morning sun,
+A fresh chapter has begun.
 ----------------------------------------
 Model: ollama:llama3.2
 Output:
-Here's one for you:
+Here's a poem to welcome the New Year:
 
-Why was Santa's little helper feeling depressed?
+When December's last breath fades away,
+And January dawns crisp and new,
+We gather hopes like morning dew,
+For all the dreams that come our way.
 
-Because he had low elf-esteem!
-
-Hope that made you giggle! Do you want another one?
+Each second brings a fresh start true,
+In this grand cycle of time so dear,
+Let's embrace the coming year,
+With hearts both brave and spirits new.
 ----------------------------------------
+```
+
+### Streamlit App Usage
+## 📸 Streamlit App Demo
+All models
+![image1.png](src/images/image1.png)
+Single Model
+![img_1.png](src/images/image2.png)
+#### Prerequisites
+- All API keys configured in `.env`
+- Ollama running locally (for Ollama models)
+- Python 3.12.8 or higher
+- Required packages installed
+
+#### Running the App
+
+1. **Start Ollama Service** (required for Ollama models):
+   ```bash
+   ollama serve
    ```
+
+2. **Launch Streamlit App** (use either command):
+   ```bash
+   # Full path command
+   streamlit run /Users/coschool/Desktop/Anup/project/ai_suites/src/app.py
+   ```
+
+   The app will be available at:
+   - Local URL: http://localhost:8501
+   - Network URL: http://192.168.1.42:8501
+
+#### App Features & Options
+
+1. **Model Selection (Sidebar)**
+   ```python
+   AVAILABLE_MODELS = {
+       "All Models": [
+           "openai:o1",
+           "anthropic:claude-3-5-haiku-latest",
+           "google:gemini-2.0-flash-exp",
+           "ollama:llama3.2"
+       ],
+       "OpenAI:O1": ["openai:o1"],
+       "Claude:claude-3-5-haiku-latest": ["anthropic:claude-3-5-haiku-latest"],
+       "Gemini:gemini-2.0-flash-exp": ["google:gemini-2.0-flash-exp"],
+       "Ollama:llama3.2": ["ollama:llama3.2"]
+   }
+   ```
+
+2. **Main Interface Components**
+   - Text input area for prompts
+   - "Generate Response" button
+   - Real-time processing indicator
+   - Expandable response sections
+
+#### Using the Interface
+
+1. **Select Model(s)**
+   - Choose "All Models" to compare responses
+   - Or select specific model for faster processing
+
+2. **Enter Prompt**
+   - Type your query in the text area
+   - Example: "Tell me a creative story about space exploration"
+
+3. **View Responses**
+   ```
+   [Model: O1]
+   [OpenAI's response appears here]
+   ------------------------
+   [Model: CLAUDE]
+   [Claude's response appears here]
+   ------------------------
+   [Model: LLAMA3.2]
+   [Ollama's response appears here]
+   ```
+
+#### Performance Tips
+- Single model selection provides faster responses
+- Local Ollama models have minimal latency
+- Response times vary with prompt complexity
+- Consider API rate limits for cloud services
 
 ## ✨ Features
 
