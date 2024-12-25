@@ -86,6 +86,49 @@ Run the example:
 python src/main.py
 ```
 
+Output Format:
+   ```env
+   Model: openai:o1
+Output:
+Here's one:
+
+Why does Santa have three gardens?
+
+So he can “ho-ho-ho”!
+
+Merry Christmas!
+----------------------------------------
+Model: anthropic:claude-3-5-haiku-latest
+Output:
+Here's a festive Christmas joke for you:
+
+Why did Santa's helper see the doctor?
+
+Because he had low "elf" esteem! 🎄😄
+
+Would you like to hear another Christmas joke?
+----------------------------------------
+Model: google:gemini-2.0-flash-exp
+Output:
+Okay, here's a Christmas joke for you:
+
+Why did Santa get a parking ticket on Christmas Eve?
+
+... Because he parked in a snow parking zone!
+
+----------------------------------------
+Model: ollama:llama3.2
+Output:
+Here's one for you:
+
+Why was Santa's little helper feeling depressed?
+
+Because he had low elf-esteem!
+
+Hope that made you giggle! Do you want another one?
+----------------------------------------
+   ```
+
 ## ✨ Features
 
 - Unified interface for multiple AI models
