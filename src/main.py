@@ -1,7 +1,6 @@
 from typing import List, Tuple
 import aisuite as ai
 from dotenv import load_dotenv
-
 from src.config import CREDENTIALS
 
 

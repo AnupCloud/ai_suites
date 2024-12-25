@@ -2,7 +2,6 @@ python-dotenv
 aisuite[all]
 pandas
 numpy
-
 # llms library
 openai
 anthropic>=0.40.0
