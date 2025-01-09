@@ -1,7 +1,7 @@
 from typing import List, Tuple
 import aisuite as ai
 from dotenv import load_dotenv
-from src.config import CREDENTIALS
+from config import CREDENTIALS
 
 
 # Load credentials from environment file
@@ -46,9 +46,10 @@ def main() -> None:
         "openai:o1",
         "anthropic:claude-3-5-haiku-latest",
         "google:gemini-2.0-flash-exp",
-        "ollama:llama3.2"
+        "ollama:llama3.2",
+        "ollama:phi4"
     ]
-    prompt = "tell me a story on new year"
+    prompt = "tell me something about Agentic AI in 1 line"
     # Fetch responses for each model
     responses = fetch_aisuite_responses(ai_models, prompt)
 
